@@ -1,0 +1,69 @@
+@use "../abstracts/variables" as *;
+
+.cards-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $space-small;
+
+  max-width: 100%;
+  padding: $space-small $space-large;
+  overflow-x: auto;
+
+  .card {
+    position: relative;
+
+    width: $card-width;
+    height: $card-height;
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    border-radius: $radius-card;
+
+    transition: transform $speed-fast $easing;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale($scale-hover);
+    }
+
+    .card-image {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    // ─────────────────────────
+    // Content
+    // ─────────────────────────
+
+    .card-content {
+      position: absolute;
+      inset: auto 0 0;
+      z-index: $z-content;
+
+      padding: $space-medium;
+
+      color: $color-white;
+
+      .card-title {
+        margin: 0 0 $space-small;
+
+        font-size: $font-size-m;
+        font-weight: $font-weight-medium;
+        color: $color-white;
+      }
+
+      .card-description {
+        margin: 0;
+
+        font-size: $font-size-s;
+        color: $color-white-soft;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+// Пути к файлам из SCSS. Считаются от скомпилированного styles.css
+// (styles/scss/main/styles.css), поэтому три «../» поднимают до корня проекта.
+$path-materials: "../../../materials/";
+$path-fonts: $path-materials + "fonts/";
+$path-icons: $path-materials + "icons/";
+$path-images: $path-materials + "images/";

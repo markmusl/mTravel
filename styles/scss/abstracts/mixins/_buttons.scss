@@ -1,0 +1,18 @@
+@use "../variables" as *;
+
+// pill-button — форма и поведение кнопки-«таблетки»: отступы, скругление,
+// курсор, плавность и увеличение при наведении.
+// Цвет фона и текста задаёт сама кнопка. Параметров нет. Использование:
+//   .my-button { background-color: black; color: white; @include pill-button; }
+// Пиши @include после обычных свойств: внутри миксина есть &:hover.
+@mixin pill-button {
+  padding: $padding-button;
+  border-radius: $radius-pill;
+
+  cursor: pointer;
+  transition: all $speed-fast $easing;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

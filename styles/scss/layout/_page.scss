@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as *;
+
+// Сюда подставляются страницы. body — flex с align-items: center,
+// поэтому без width: 100% блок сжался бы по содержимому.
+.page {
+  width: 100%;
+
+  // плавное появление и исчезновение при смене страницы
+  transition:
+    opacity $speed-page $easing,
+    transform $speed-page $easing;
+
+  // router.js вешает этот класс, пока старая страница уходит и новая грузится
+  &.is-leaving {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}

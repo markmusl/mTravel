@@ -1,0 +1,16 @@
+@use "../abstracts/variables/sizes" as *;
+
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  gap: 5px;
+
+  input {
+    border-radius: $radius-pill;
+    padding: 5px 10px;
+  }
+
+  .reg-block {
+  }
+}

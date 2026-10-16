@@ -1,0 +1,61 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.input {
+  border: none !important;
+}
+
+label {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.button {
+  width: auto;
+
+  @include flex-center;
+  flex-direction: row;
+
+  background-color: $color-black;
+  color: $color-white !important;
+
+  @include pill-button;
+
+  font-size: $font-size-s;
+
+  &:active,
+  &.is-active {
+    transform: scale(0.9);
+    opacity: 75%;
+  }
+}
+
+.liquid-button {
+  width: auto;
+
+  @include flex-center;
+  flex-direction: row;
+
+  background-color: $color-black;
+  color: $color-black !important; // тёмный текст: на светлом градиенте белый не виден
+
+  @include liquid-container;
+
+  font-size: $font-size-s;
+
+  &:active,
+  &.is-active {
+    transform: scale(0.9);
+    opacity: 75%;
+  }
+}
+
+.playlist-button {
+  position: relative;
+  z-index: 9500;
+
+  .button-icon {
+    width: 12px;
+    margin: 1px 0 0 10px;
+  }
+}

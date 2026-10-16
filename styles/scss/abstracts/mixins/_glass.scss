@@ -1,0 +1,15 @@
+@use "../variables" as *;
+
+// liquid-container — «стеклянная» поверхность: полупрозрачный фон + размытие
+// того, что находится позади, + светлые края сверху и снизу.
+// Параметров нет. Использование:
+//   .my-panel { @include liquid-container; }
+// Хочешь другой цвет стекла? Перебей после include:
+//   .my-panel { @include liquid-container; background-color: rgba(255, 255, 255, 0.8); }
+@mixin liquid-container {
+  background-color: $background-secondary;
+  backdrop-filter: $blur;
+
+  border-top: $border-top;
+  border-bottom: $border-bottom;
+}

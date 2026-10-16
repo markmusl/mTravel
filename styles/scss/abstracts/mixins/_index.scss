@@ -1,0 +1,5 @@
+// Все миксины проекта. Один вход: @use "../abstracts/mixins" as *;
+// Миксин — это «набор свойств», который вставляется командой @include имя;
+@forward "glass";
+@forward "buttons";
+@forward "layout";

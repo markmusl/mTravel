@@ -1,0 +1,98 @@
+// Современный reset (на основе подходов Josh Comeau и Andy Bell).
+// Задача reset — убрать «сюрпризы» браузера, чтобы дальше стилизовать с чистого листа.
+
+// 1. Считать width/height вместе с padding и border.
+//    Без этого width: 100% + padding делает блок шире родителя.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// 2. Убрать встроенные отступы у всех элементов
+*:not(dialog) {
+  margin: 0;
+}
+
+html {
+  // Телефоны не должны сами увеличивать текст в горизонтальном режиме
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  line-height: 1.5; // читаемый межстрочный интервал (раньше было 1)
+  -webkit-font-smoothing: antialiased; // более ровный текст на macOS
+}
+
+// 3. Медиа ведут себя как блоки и не вылезают за родителя
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// 4. Поля форм и кнопки наследуют шрифт страницы (по умолчанию у них свой)
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+// 5. Длинные слова переносятся, а не ломают вёрстку
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+// 6. Заголовки красивее переносятся по строкам
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+// 7. Списки без маркеров (стилизуй сам, когда нужно)
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Уважаем системную настройку «уменьшить движение»
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a {
+  text-decoration: none !important;
+}

@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-area {
+  border: none;
+  @include liquid-container;
+  font-size: $font-size-m;
+
+  padding: 5px 30px 5px 20px;
+
+  border-radius: 500px;
+
+  text-transform: lowercase;
+  font-weight: $font-weight-medium;
+}

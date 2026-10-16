@@ -1,0 +1,21 @@
+// ─────────────────────────
+// Цвета
+// ─────────────────────────
+$color-black: black;
+$color-white: white;
+$color-gray: #444444;
+
+$color-text-soft: rgba(0, 0, 0, 0.6);
+$color-white-soft: rgba(255, 255, 255, 0.8);
+
+$color-fill: rgba(0, 0, 0, 0.1);
+$color-fill-hover: rgba(0, 0, 0, 0.2);
+$color-overlay: rgba(0, 0, 0, 0.1);
+
+// ─────────────────────────
+// Мягкие градиенты (вместо белого фона)
+// ─────────────────────────
+// linear-gradient(угол, цвет1, цвет2, ...) — плавный переход между цветами
+$gradient-page: linear-gradient(135deg, #d9e6ff 0%, #ecdfff 50%, #ffe3d3 100%);
+$gradient-active: linear-gradient(135deg, #ffffff 0%, #eef2ff 100%);
+$gradient-button: linear-gradient(135deg, #ffffff 0%, #e3e9ff 100%);

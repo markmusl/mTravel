@@ -1,0 +1,13 @@
+// Все переменные проекта. Один вход: @use "../abstracts/variables" as *;
+// Названия переменных не менялись — только раскладка по файлам.
+//
+// Порядок важен там, где одна переменная использует другую
+// (например, $background-* использует $transparency-*): они лежат в одном файле.
+@forward "paths";
+@forward "glass";
+@forward "colors";
+@forward "typography";
+@forward "spacing";
+@forward "sizes";
+@forward "motion";
+@forward "layers";

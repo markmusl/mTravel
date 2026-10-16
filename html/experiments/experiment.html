@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <title>mTravel · experiment</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/scss/main/styles.css" />
+  </head>
+
+  <body>
+    <!--
+      Статичная секция одной страны. Без JS: всё написано руками.
+      Открывай через Live Server (пути начинаются с "/").
+
+      Что можно пробовать:
+      — менять текст, флаг, дату;
+      — убрать/добавить <img> в .photos-container;
+      — убрать класс "is-hidden" у iframe, чтобы увидеть окно плейлиста.
+    -->
+
+    <section class="galerie-container" data-country="kazakhstan">
+      <!-- шапка страны -->
+      <div class="moment-data">
+        <div class="info-left">
+          <h3 class="moment-flag">🇰🇿</h3>
+          <h3 class="moment-location">kazakhstan</h3>
+          <h4 class="moment-date">agosto - setembro 2026</h4>
+          <p class="moment-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est
+            aliquam autem tempore corporis natus magnam id nulla porro sequi
+            corrupti nihil molestias inventore doloremque expedita eveniet,
+            saepe quae consequuntur dignissimos!
+          </p>
+        </div>
+
+        <div class="info-right">
+          <a class="button playlist-button">
+            playlist
+            <img
+              class="button-icon"
+              src="/materials/icons/chevron.up.svg"
+              alt=""
+            />
+          </a>
+
+          <!-- окно плеера: спрятано классом is-hidden -->
+          <iframe
+            class="playlist-window is-hidden"
+            allow="autoplay *; encrypted-media *"
+            frameborder="0"
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+            src="https://embed.music.apple.com/pt/playlist/astana/pl.u-zPyL1gXTeG3GjXb"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- фотографии -->
+      <div class="photos-container">
+        <img
+          class="galerie-photo"
+          src="/materials/images/countries/kazakhstan/01.jpeg"
+          alt="Kazakhstan 01"
+        />
+        <img
+          class="galerie-photo"
+          src="/materials/images/countries/kazakhstan/02.jpeg"
+          alt="Kazakhstan 02"
+        />
+        <img
+          class="galerie-photo"
+          src="/materials/images/countries/kazakhstan/03.jpeg"
+          alt="Kazakhstan 03"
+        />
+        <img
+          class="galerie-photo"
+          src="/materials/images/countries/kazakhstan/04.jpeg"
+          alt="Kazakhstan 04"
+        />
+        <img
+          class="galerie-photo"
+          src="/materials/images/countries/kazakhstan/05.jpeg"
+          alt="Kazakhstan 05"
+        />
+        <img
+          class="galerie-photo"
+          src="/materials/images/countries/kazakhstan/06.jpeg"
+          alt="Kazakhstan 06"
+        />
+        <img
+          class="galerie-photo"
+          src="/materials/images/countries/kazakhstan/07.jpeg"
+          alt="Kazakhstan 07"
+        />
+        <img
+          class="galerie-photo"
+          src="/materials/images/countries/kazakhstan/08.jpeg"
+          alt="Kazakhstan 08"
+        />
+        <img
+          class="galerie-photo"
+          src="/materials/images/countries/kazakhstan/09.jpeg"
+          alt="Kazakhstan 09"
+        />
+      </div>
+    </section>
+  </body>
+</html>

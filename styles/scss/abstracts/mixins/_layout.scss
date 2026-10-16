@@ -1,0 +1,8 @@
+// flex-center — центрирует содержимое и по горизонтали, и по вертикали.
+// Параметров нет. Использование:
+//   .box { @include flex-center; }
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

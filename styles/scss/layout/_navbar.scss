@@ -1,0 +1,83 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.navbar-pill {
+  @include liquid-container;
+
+  position: fixed;
+  top: $space-medium;
+  z-index: $z-navbar;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 75%;
+
+  height: $navbar-height;
+  padding: 0 5px 0 20px;
+
+  border-radius: $radius-pill;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  // ссылка вокруг логотипа: растягиваем на всю высоту навбара,
+  // чтобы height: 35% у .logo считался так же, как раньше
+  .logo-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .logo {
+    height: 35%;
+    transition: $speed-fast;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+
+  .nav-item {
+    padding: $padding-button;
+
+    font-size: $font-size-xs;
+    text-transform: lowercase;
+    color: $color-gray;
+
+    border-radius: $radius-pill;
+    transition: $speed-fast;
+
+    cursor: pointer;
+
+    * {
+      text-decoration: none !important;
+    }
+
+    &:hover {
+      color: $color-black;
+      background-color: $background-secondary;
+    }
+
+    &.active {
+      @include liquid-container;
+      color: $color-black;
+    }
+  }
+
+  .navbar-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+    height: auto;
+
+    background-color: black !important;
+    color: white !important;
+
+    @include pill-button;
+  }
+}

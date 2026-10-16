@@ -1,0 +1,15 @@
+// ─────────────────────────
+// Liquid glass: прозрачность, фон, границы, размытие
+// ─────────────────────────
+$transparency-primary: 0.7;
+$transparency-secondary: 0.5;
+$transparency-terciary: 0.2;
+
+$background-primary: rgba(255, 255, 255, $transparency-primary);
+$background-secondary: rgba(255, 255, 255, $transparency-secondary);
+$background-terciary: rgba(255, 255, 255, $transparency-secondary);
+
+$border-top: 1px solid rgb(255, 255, 255, 0.6);
+$border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+
+$blur: blur(10px);
