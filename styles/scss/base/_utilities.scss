@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as *;
+
+.hidden {
+  display: none !important;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.vertical {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 200px;
+
+  p {
+    width: 450px;
+    max-width: 100%;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: $space-small;
+  left: $space-small;
+  z-index: $z-navbar + 1;
+
+  padding: $padding-button;
+  border-radius: $radius-pill;
+  background-color: $color-black;
+  color: $color-white;
+
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: none;
+  }
+}
+
+.text-link {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}

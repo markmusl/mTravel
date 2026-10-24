@@ -1,0 +1,41 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.button,
+.liquid-button {
+  @include flex-center;
+  flex-direction: row;
+
+  width: auto;
+  font-size: $font-size-s;
+
+  border: 1px solid transparent;
+
+  @include pill-button;
+
+  &:active,
+  &.is-active {
+    transform: scale(0.9);
+    opacity: 75%;
+  }
+}
+
+.button {
+  background-color: $color-black;
+  color: $color-white;
+}
+
+.liquid-button {
+  @include liquid-container;
+  color: $color-black;
+}
+
+.playlist-button {
+  position: relative;
+  z-index: 9500;
+
+  .button-icon {
+    width: 12px;
+    margin: 1px 0 0 10px;
+  }
+}

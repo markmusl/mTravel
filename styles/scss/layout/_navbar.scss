@@ -1,0 +1,103 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+nav {
+  @include liquid-container;
+  background-color: $background-primary;
+  box-shadow: $shadow-glass-large;
+
+  padding: 5px 5px 5px 25px;
+  border-radius: $radius-pill;
+
+  position: fixed;
+  top: 3%;
+  left: 0;
+  right: 0;
+  z-index: $z-navbar;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  width: 90%;
+  margin-inline: auto;
+
+  > a:first-child {
+    justify-self: start;
+  }
+
+  > .button {
+    justify-self: end;
+    font-size: $font-size-xs;
+  }
+
+  .logo {
+    height: 18px;
+    width: auto;
+    transition: $speed-fast;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .nav-section {
+    display: flex;
+    gap: 4px;
+
+    .nav-item {
+      padding: $padding-button;
+      border-radius: $radius-pill;
+
+      font-size: $font-size-xs;
+      text-transform: lowercase;
+      white-space: nowrap;
+      color: $color-gray;
+
+      transition: $speed-fast;
+
+      &:hover {
+        color: $color-black;
+        background-color: rgba(0, 0, 0, 0.05);
+        transform: scale($scale-hover);
+      }
+
+      &.active {
+        @include liquid-container;
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: auto 1fr auto;
+    width: 94%;
+
+    .logo {
+      height: 14px;
+    }
+
+    .nav-section {
+      justify-self: center;
+
+      .nav-item {
+        padding: 6px 8px;
+      }
+    }
+
+    > .button {
+      padding: 8px 12px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    grid-template-columns: 1fr auto;
+
+    > a:first-child {
+      display: none;
+    }
+
+    .nav-section {
+      justify-self: start;
+    }
+  }
+}

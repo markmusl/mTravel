@@ -1,0 +1,13 @@
+@use "../variables" as *;
+
+@mixin liquid-container {
+  background-color: $background-secondary;
+  backdrop-filter: $blur;
+
+  border-top: $border-top;
+  border-bottom: $border-bottom;
+
+  box-shadow: $shadow-glass;
+
+  color: black;
+}

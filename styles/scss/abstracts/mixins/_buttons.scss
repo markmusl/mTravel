@@ -1,0 +1,13 @@
+@use "../variables" as *;
+
+@mixin pill-button {
+  padding: $padding-button;
+  border-radius: $radius-pill;
+
+  cursor: pointer;
+  transition: all $speed-fast $easing;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

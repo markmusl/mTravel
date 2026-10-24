@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as *;
+
+.registration-section,
+.login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .section-data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    border-radius: $radius-pill;
+    width: 300px;
+    max-width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+
+    background-color: rgb(240, 240, 240);
+    border: none;
+  }
+}
+
+#registerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: min(500px, 100% - 40px);
+  text-align: center;
+
+  #submitButton {
+    margin-top: 50px;
+    width: 100%;
+  }
+}
+
+.form-subtitle,
+.form-message {
+  font-size: $font-size-s;
+  letter-spacing: $letter-spacing;
+  color: $color-text-soft;
+  text-align: center;
+}
+
+.form-subtitle {
+  margin-bottom: 25px;
+}
+
+.form-message {
+  min-height: 1.5em;
+  margin-top: $space-small;
+}

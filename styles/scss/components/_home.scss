@@ -1,0 +1,88 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.image-container {
+  @include flex-center;
+  flex-direction: column;
+
+  background-image: url("#{$path-images}backgrounds/2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 95%;
+  height: 95%;
+
+  gap: 15px;
+
+  border-radius: $radius-card;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+  color: $color-white;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: inherit;
+  }
+
+  .logo {
+    fill: white;
+    width: min(405px, 80%);
+    height: auto;
+  }
+
+  .slogan {
+    font-size: $font-size-m;
+    font-weight: $font-weight-light;
+    letter-spacing: $letter-spacing;
+    text-align: center;
+  }
+
+  &.vertical {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 250px;
+
+    h2 {
+      margin-bottom: 0;
+      font-size: 36px;
+    }
+
+    > div {
+      width: 450px;
+      max-width: 100%;
+    }
+
+    p + p {
+      margin-top: $space-medium;
+    }
+  }
+
+  .destination-list {
+    margin-top: $space-small;
+    padding-left: $space-medium;
+    list-style: disc;
+  }
+
+  @media (max-width: 900px) {
+    &.vertical {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 $space-medium;
+    }
+  }
+}
+
+.locations-inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+
+  margin-top: 25px;
+  flex-direction: row;
+  gap: 7px;
+}

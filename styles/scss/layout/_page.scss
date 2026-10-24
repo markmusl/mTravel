@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as *;
+
+.page {
+  width: 100%;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: $speed-page;
+}
+
+nav {
+  view-transition-name: navbar;
+}
+
+@supports not (view-transition-name: none) {
+  .page,
+  .footer {
+    animation: page-in $speed-page $easing;
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}

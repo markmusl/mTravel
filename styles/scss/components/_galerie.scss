@@ -1,0 +1,168 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.location-bar {
+  position: fixed;
+  @include flex-center;
+  flex-direction: row;
+
+  justify-content: safe center;
+
+  bottom: 0%;
+
+  width: 100%;
+  min-height: 0;
+  padding: 0 $space-small $space-small;
+
+  gap: 7px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.galerie-container {
+  padding-top: $section-gap;
+
+  .moment-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+
+    width: 100%;
+    padding: 0 clamp(20px, 7vw, $space-xlarge);
+
+    .moment-flag,
+    .moment-location {
+      font-size: $font-size-l;
+      font-weight: $font-weight-light;
+      letter-spacing: $letter-spacing;
+      color: $color-black;
+    }
+
+    .moment-location {
+      margin-bottom: 0;
+    }
+
+    .moment-date {
+      font-size: $font-size-s;
+      letter-spacing: $letter-spacing;
+      color: $color-text-soft;
+    }
+
+    .moment-source {
+      margin-top: $space-small;
+
+      font-size: 12px;
+      color: $color-text-soft;
+    }
+
+    .moment-story {
+      margin-top: $space-medium;
+      width: 450px;
+
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.04em;
+    }
+
+    .moment-description {
+      margin-top: 25px;
+      width: 450px;
+
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.04em;
+    }
+  }
+
+  .playlist-window {
+    position: absolute;
+    height: 451px;
+    width: min(650px, 90vw);
+    right: 7%;
+
+    transform: scale(1.09);
+
+    z-index: 9900;
+
+    margin-top: 20px;
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
+
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+    border-top: $border-top;
+
+    &.is-hidden {
+      transform: translateY(-15px);
+    }
+  }
+
+  .photos-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+
+    width: 100%;
+    margin-top: $space-medium;
+
+    background-image: $gradient-page;
+  }
+
+  .galerie-photo {
+    display: block;
+
+    width: 100%;
+    height: 50vh;
+
+    object-fit: cover;
+
+    animation: photo-in 0.6s $easing;
+  }
+}
+
+@keyframes photo-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .galerie-container .photos-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .galerie-container {
+    .moment-data {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $space-medium;
+    }
+
+    .moment-data .moment-description,
+    .moment-data .moment-story {
+      width: 100%;
+    }
+
+    .photos-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galerie-photo {
+      height: 35vh;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .galerie-container .photos-container {
+    grid-template-columns: 1fr;
+  }
+}

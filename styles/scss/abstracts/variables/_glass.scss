@@ -1,0 +1,20 @@
+$transparency-primary: 0.7;
+$transparency-secondary: 0.5;
+
+$background-primary: rgba(255, 255, 255, $transparency-primary);
+$background-secondary: rgba(255, 255, 255, $transparency-secondary);
+
+$border-top: 0.75px solid rgb(255, 255, 255, 0.3);
+$border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+
+$blur: blur(10px) saturate(200%);
+
+$shadow-glass:
+  inset 0 1px 0 rgba(255, 255, 255, 0.8),
+  0 0 0 1px rgba(0, 0, 0, 0.06),
+  0 4px 16px rgba(0, 0, 0, 0.08);
+
+$shadow-glass-large:
+  inset 0 1px 0 rgba(255, 255, 255, 0.8),
+  0 0 0 1px rgba(0, 0, 0, 0.08),
+  0 10px 30px rgba(0, 0, 0, 0.12);

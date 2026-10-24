@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: #ffffff;
+  background-attachment: fixed;
+
+  * {
+    font-family: $font-main;
+  }
+}

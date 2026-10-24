@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as *;
+
+h1 {
+  font-size: 36px !important;
+
+  letter-spacing: $letter-spacing;
+
+  font-family: $font-main;
+  font-weight: $font-weight-light;
+  color: $color-black;
+}
+
+h2 {
+  margin-bottom: $space-small;
+
+  font-size: $font-size-m;
+  letter-spacing: $letter-spacing;
+
+  font-family: $font-main;
+  font-weight: $font-weight-light;
+  color: $color-black;
+}
+
+h3 {
+  font-weight: $font-weight-light;
+
+  font-size: $font-size-l;
+  letter-spacing: $letter-spacing;
+}
+
+h4 {
+  font-weight: $font-weight-normal;
+
+  font-size: $font-size-s;
+  letter-spacing: $letter-spacing;
+  color: $color-text-soft;
+
+  margin-bottom: 25px;
+}
